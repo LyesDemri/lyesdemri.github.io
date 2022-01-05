@@ -15,6 +15,7 @@ var direction='down';
 var walking=false;
 const sxWalkAnimRight=[0,1,2,3,4,5,6,7,8,9];
 const syWalkAnimRight=[7,7,7,7,7,7,7,7,7,7];
+
 var animCtr=0;
 
 function getTouchPos(canvasDom, touchEvent)
