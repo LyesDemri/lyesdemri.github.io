@@ -59,5 +59,4 @@ function handleInput()
   rightButton=0;
   walking=0;
  }
- rightButton=1;
 }
