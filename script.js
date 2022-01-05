@@ -22,6 +22,16 @@ const syWalkAnimUp=[6,6,6,6,6,6,6,6,6,6];
 const sxWalkAnimLeft=[0,1,2,3,4,5,6,7,8,9];
 const syWalkAnimLeft=[5,5,5,5,5,5,5,5,5,5];
 
+const sxIdleAnimDown=[0,0,0,0,1,2,1,0,0,0];
+const syIdleAnimDown=[0,0,0,0,0,0,0,0,0,0];
+const sxIdleAnimRight=[0,0,0,0,1,2,1,0,0,0];
+const syIdleAnimRight=[3,3,3,3,3,3,3,3,3,3];
+const sxIdleAnimUp=[0,0,0,0,0,0,0,0,0,0];
+const syIdleAnimUp=[2,2,2,2,2,2,2,2,2,2];
+const sxIdleAnimLeft=[0,0,0,0,1,2,1,0,0,0];
+const syIdleAnimLeft=[1,1,1,1,1,1,1,1,1,1];
+
+
 var animCtr=0;
 
 function getTouchPos(canvasDom, touchEvent)
