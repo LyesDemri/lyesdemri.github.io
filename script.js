@@ -13,8 +13,14 @@ var leftButton=0;
 var rightButton=0;
 var direction='down';
 var walking=false;
+const sxWalkAnimDown=[0,1,2,3,4,5,6,7,8,9];
+const syWalkAnimDown=[4,4,4,4,4,4,4,4,4,4];
 const sxWalkAnimRight=[0,1,2,3,4,5,6,7,8,9];
 const syWalkAnimRight=[7,7,7,7,7,7,7,7,7,7];
+const sxWalkAnimUp=[0,1,2,3,4,5,6,7,8,9];
+const syWalkAnimUp=[6,6,6,6,6,6,6,6,6,6];
+const sxWalkAnimLeft=[0,1,2,3,4,5,6,7,8,9];
+const syWalkAnimLeft=[5,5,5,5,5,5,5,5,5,5];
 
 var animCtr=0;
 

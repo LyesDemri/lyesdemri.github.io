@@ -10,14 +10,22 @@ function draw()
  //draw character
  switch (direction)
  {
-  case 'down': sy=0; break;
+  case 'down': 
+   sxVector=sxWalkAnimDown;
+   syVector=syWalkAnimDown;
+  break;
   case 'right': 
    sxVector=sxWalkAnimRight;
    syVector=syWalkAnimRight;
-   //sy=3;
    break;
-  case 'up': sy=2; break;
-  case 'left': sy=1; break;
+  case 'up': 
+   sxVector=sxWalkAnimUp;
+   syVector=syWalkAnimUp;
+  break;
+  case 'left': 
+   sxVector=sxWalkAnimLeft;
+   syVector=syWalkAnimLeft;
+  break;
  }
  if (walking==0)
  {
