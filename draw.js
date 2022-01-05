@@ -64,6 +64,7 @@ function draw()
   sx=sxVector[Math.floor(animCtr/10)];
   sy=syVector[Math.floor(animCtr/10)];
   ctx.drawImage(sprite,sx*120,sy*130,120,130,x,y,60,65);
+  animCtr=(animCtr+1)%100;
  }
  else
  {
