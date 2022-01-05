@@ -11,20 +11,52 @@ function draw()
  switch (direction)
  {
   case 'down': 
-   sxVector=sxWalkAnimDown;
-   syVector=syWalkAnimDown;
+   if (walking==1)
+   {
+    sxVector=sxWalkAnimDown;
+    syVector=syWalkAnimDown;
+   }
+   else
+   {
+    sxVector=sxIdleAnimDown;
+    syVector=syIdleAnimDown;
+   }
   break;
   case 'right': 
-   sxVector=sxWalkAnimRight;
-   syVector=syWalkAnimRight;
+   if (walking==1)
+   {
+    sxVector=sxWalkAnimRight;
+    syVector=syWalkAnimRight;
+   }
+   else
+   {
+    sxVector=sxIdleAnimRight;
+    syVector=syIdleAnimRight;
+   }
    break;
   case 'up': 
-   sxVector=sxWalkAnimUp;
-   syVector=syWalkAnimUp;
+      if (walking==1)
+   {
+    sxVector=sxWalkAnimUp;
+    syVector=syWalkAnimUp;
+   }
+   else
+   {
+    sxVector=sxIdleAnimUp;
+    syVector=syIdleAnimUp;
+   }
   break;
   case 'left': 
-   sxVector=sxWalkAnimLeft;
-   syVector=syWalkAnimLeft;
+   if (walking==1)
+   {
+    sxVector=sxWalkAnimLeft;
+    syVector=syWalkAnimLeft;
+   }
+   else
+   {
+    sxVector=sxIdleAnimLeft;
+    syVector=syIdleAnimLeft;
+   }
   break;
  }
  if (walking==0)
