@@ -6,25 +6,25 @@ function update()
  //update character
  if (downButton==1)
  {
-  y=Math.min(y+1,320-65);
+  y=Math.min(y+speed,320-65);
   direction='down'
   walking=true;
  }
- else if (rightButton==1)
+ if (rightButton==1)
  {
-  x=Math.min(x+1,480-60)
+  x=Math.min(x+speed,480-60)
   direction='right'
   walking=true;
  }
- else if (upButton==1)
+ if (upButton==1)
  {
-  y=Math.max(y-1,0);
+  y=Math.max(y-speed,0);
   direction='up'
   walking=true;
  }
- else if (leftButton==1)
+ if (leftButton==1)
  {
-  x=Math.max(x-1,0);
+  x=Math.max(x-speed,0);
   direction='left'
   walking=true
  }
@@ -58,6 +58,33 @@ function handleInput()
   leftButton=0;
   rightButton=0;
   walking=0;
-  animCtr=0;
+ }
+ 
+ if (keyPressed==1)
+ {
+  if (keyCode==40)
+  {
+   downButton=1;
+  }
+  if (keyCode == 39)
+  {
+   rightButton=1;
+  }
+  if (keyCode==38)
+  {
+   upButton=1;
+  }
+  if (keyCode==37)
+  {
+   leftButton=1;
+  }
+ }
+ else
+ {
+  downButton=0;
+  rightButton=0;
+  upButton=0;
+  leftButton=0;
+  walking=0;
  }
 }

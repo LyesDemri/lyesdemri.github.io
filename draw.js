@@ -2,11 +2,9 @@ function draw()
 {
  //refresh
  ctx.clearRect(0,0,480,320);
- //draw arrow buttons
- ctx.fillRect(2*40,6*40,40,40); //Down
- ctx.fillRect(3*40,5*40,40,40); //Right
- ctx.fillRect(2*40,4*40,40,40); //Up
- ctx.fillRect(1*40,5*40,40,40); //Left
+
+ //TODO: draw background
+
  //draw character
  switch (direction)
  {
@@ -61,17 +59,23 @@ function draw()
  }
  if (walking==0)
  {
-  sx=sxVector[Math.floor(animCtr/10)];
-  sy=syVector[Math.floor(animCtr/10)];
+  sx=sxVector[animCtr];
+  sy=syVector[animCtr];
   ctx.drawImage(sprite,sx*120,sy*130,120,130,x,y,60,65);
-  animCtr=(animCtr+1)%100;
+  animCtr=(animCtr+1)%66;
  }
  else
  {
   //ctx.drawImage(sprite,sx*120,(sy+4)*130,120,130,x,y,60,65);
-  sx=sxVector[Math.floor(animCtr/10)];
-  sy=syVector[Math.floor(animCtr/10)];
+  sx=sxVector[animCtr];
+  sy=syVector[animCtr];
   ctx.drawImage(sprite,sx*120,sy*130,120,130,x,y,60,65);
-  animCtr=(animCtr+1)%100;
+  animCtr=(animCtr+1)%10;
  }
+
+  //draw arrow buttons
+ ctx.fillRect(2*40,6*40,40,40); //Down
+ ctx.fillRect(3*40,5*40,40,40); //Right
+ ctx.fillRect(2*40,4*40,40,40); //Up
+ ctx.fillRect(1*40,5*40,40,40); //Left
 }
