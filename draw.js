@@ -3,9 +3,7 @@ function draw()
  //refresh
  ctx.clearRect(0,0,480,320);
 
-
-
- //TODO: draw background
+ //draw background
  for (i=-1;i<16;i++)
  {
   for (j=-1;j<11;j++)
@@ -17,16 +15,6 @@ function draw()
    mapX[jmap][imap]*32,mapY[jmap][imap]*32,32,32,
    //coordonnees ou afficher le tile
    imap*32-x,jmap*32-y,32,32);
-   /*
-   x=37 y=37
-   i=j=-1
-   imap=0
-   jmap=0
-   mapX[0][0]*32=0
-   mapY[0][0]*32=352
-   imap*32-x=-37
-   jmap*32-y=-37
-   */
   }
  }
 
@@ -87,7 +75,7 @@ function draw()
   animCtr=(animCtr+1)%66;
   sx=sxVector[animCtr];
   sy=syVector[animCtr];
-  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2,320/2,60/2,65/2);
+  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2-16,320/2-16,60/2,65/2);
  }
  else
  {
@@ -95,7 +83,7 @@ function draw()
   animCtr=(animCtr+1)%10;
   sx=sxVector[animCtr];
   sy=syVector[animCtr];
-  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2,320/2,60/2,65/2);
+  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2-16,320/2-16,60/2,65/2);
  }
 
  //draw other characters
