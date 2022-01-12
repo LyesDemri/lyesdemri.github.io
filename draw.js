@@ -3,9 +3,34 @@ function draw()
  //refresh
  ctx.clearRect(0,0,480,320);
 
- //TODO: draw background
 
- //draw character
+
+ //TODO: draw background
+ for (i=-1;i<16;i++)
+ {
+  for (j=-1;j<11;j++)
+  {
+   imap=Math.floor((x+i*32)/32)
+   jmap=Math.floor((y+j*32)/32)
+   ctx.drawImage(terrainImg,
+   //coordonnees du tile a afficher
+   mapX[jmap][imap]*32,mapY[jmap][imap]*32,32,32,
+   //coordonnees ou afficher le tile
+   imap*32-x,jmap*32-y,32,32);
+   /*
+   x=37 y=37
+   i=j=-1
+   imap=0
+   jmap=0
+   mapX[0][0]*32=0
+   mapY[0][0]*32=352
+   imap*32-x=-37
+   jmap*32-y=-37
+   */
+  }
+ }
+
+ //draw characters
  switch (direction)
  {
   case 'down': 
@@ -59,20 +84,22 @@ function draw()
  }
  if (walking==0)
  {
+  animCtr=(animCtr+1)%66;
   sx=sxVector[animCtr];
   sy=syVector[animCtr];
-  ctx.drawImage(sprite,sx*120,sy*130,120,130,x,y,60,65);
-  animCtr=(animCtr+1)%66;
+  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2,320/2,60/2,65/2);
  }
  else
  {
   //ctx.drawImage(sprite,sx*120,(sy+4)*130,120,130,x,y,60,65);
+  animCtr=(animCtr+1)%10;
   sx=sxVector[animCtr];
   sy=syVector[animCtr];
-  ctx.drawImage(sprite,sx*120,sy*130,120,130,x,y,60,65);
-  animCtr=(animCtr+1)%10;
+  ctx.drawImage(sprite,sx*120,sy*130,120,130,480/2,320/2,60/2,65/2);
  }
 
+ //draw other characters
+ ctx.drawImage(lyesImg,12*32-x,15*32-y,16,32);
   //draw arrow buttons
  ctx.fillRect(2*40,6*40,40,40); //Down
  ctx.fillRect(3*40,5*40,40,40); //Right
