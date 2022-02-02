@@ -1,0 +1,18 @@
+*Ameliorations du code:
+--Ameliorer le D-PAD (supprimer valeurs magiques)
+--Ameliorer le code du dessin (sxWalkAnimRight & cie)
+
+*Ameliorations du pgm (en general):
+--Bloquer l'ecran
+--Mode plein ecran automatique
+--Afficher le D-PAD uniquement sur android
+--Afficher le D-PAD uniquement quand le canvas est presse
+--Ajouter un menu d'options
+
+*Avancement du jeu:
+--Ajouter plusieurs personnages
+--Faire deplacer les personnages
+--Empecher le perso de marcher sur les autres persos
+--Ajouter des ennemis
+--Ajouter des objets a ramasser
+--Ajouter un inventaire

@@ -6,27 +6,32 @@ function update()
  //update character
  if (downButton==1)
  {
-  y=Math.min(y+speed,mapSize*26);
-  direction='down'
+  //I don't get the +16s
+  if ((collisionMap[Math.floor((y+16)/32)+4+1][Math.floor(x/32)+7]==1)&&(collisionMap[Math.floor((y+16)/32)+4+1][Math.floor((x+31)/32)+7]==1))
+   y=Math.min(y+speed,mapSize*26);
   walking=true;
+  direction='down'
  }
  if (rightButton==1)
  {
-  x=Math.min(x+speed,mapSize*26)
+  if ((collisionMap[Math.floor((y+16)/32)+4][Math.floor(x/32)+7+1]==1)&&(collisionMap[Math.floor((y+16+31)/32)+4][Math.floor(x/32)+7+1]==1))
+   x=Math.min(x+speed,mapSize*26)
+  walking=true
   direction='right'
-  walking=true;
  }
  if (upButton==1)
  {
-  y=Math.max(y-speed,32);
+  if ((collisionMap[Math.floor((y+16-1)/32)+4][Math.floor(x/32)+7]==1)&&(collisionMap[Math.floor((y+16-1)/32)+4][Math.floor((x+31)/32)+7]==1))
+   y=Math.max(y-speed,32);
+  walking=true
   direction='up'
-  walking=true;
  }
  if (leftButton==1)
  {
-  x=Math.max(x-speed,32);
-  direction='left'
+  if ((collisionMap[Math.floor((y+16)/32)+4][Math.floor((x-1)/32)+7]==1)&&(collisionMap[Math.floor((y+16+31)/32)+4][Math.floor((x-1)/32)+7]==1))
+   x=Math.max(x-speed,32);
   walking=true
+  direction='left'
  }
 }
 
