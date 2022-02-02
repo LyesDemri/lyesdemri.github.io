@@ -10,11 +10,19 @@ function draw()
   {
    imap=Math.floor((x+i*32)/32)
    jmap=Math.floor((y+j*32)/32)
-   ctx.drawImage(terrainImg,
+   ctx.drawImage(tilesets[map[jmap][imap][2]],
    //coordonnees du tile a afficher
-   mapX[jmap][imap]*32,mapY[jmap][imap]*32,32,32,
+   map[jmap][imap][0]*32,map[jmap][imap][1]*32,32,32,
    //coordonnees ou afficher le tile
    imap*32-x,jmap*32-y,32,32);
+   
+   ctx.drawImage(tilesets[map2[jmap][imap][2]],
+   //coordonnees du tile a afficher
+   map2[jmap][imap][0]*32,map2[jmap][imap][1]*32,32,32,
+   //coordonnees ou afficher le tile
+   imap*32-x,jmap*32-y,32,32);
+
+   //drawCollisionGrid()
   }
  }
 
@@ -88,9 +96,30 @@ function draw()
 
  //draw other characters
  ctx.drawImage(lyesImg,12*32-x,15*32-y,16,32);
-  //draw arrow buttons
- ctx.fillRect(2*40,6*40,40,40); //Down
- ctx.fillRect(3*40,5*40,40,40); //Right
- ctx.fillRect(2*40,4*40,40,40); //Up
- ctx.fillRect(1*40,5*40,40,40); //Left
+ //ctx.drawImage(tilesets[1],6*48,11*48,2*48,3*48,30*32-x,30*32-y,2*48,3*48)
+ 
+ //draw arrow buttons
+ if (navigator.userAgentData.mobile)
+ {
+	ctx.strokeRect(2*40,6*40,40,40); //Down
+	ctx.strokeRect(3*40,5*40,40,40); //Right
+	ctx.strokeRect(2*40,4*40,40,40); //Up
+	ctx.strokeRect(1*40,5*40,40,40); //Left
+ }
+ ctx.fillText("Tile position:"+Math.floor((x+16)/32)+","+Math.floor((y+16)/32),10,10)
+ ctx.fillText("Position:"+x+","+y,10,20)
+
+}
+
+function drawCollisionGrid()
+{
+ ctx.beginPath();
+ ctx.rect(imap*32-x+14,jmap*32-y+14,4,4);
+ if (collisionMap[jmap][imap]==1)
+  ctx.fillStyle = "blue";
+ else
+  ctx.fillStyle = "red";
+ ctx.fill();
+ ctx.rect(imap*32-x,jmap*32-y,32,32);
+ ctx.stroke();
 }

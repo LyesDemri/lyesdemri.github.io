@@ -5,10 +5,17 @@ var sprite = document.getElementById("linkImg");
 var lyesSprite = document.getElementById("lyesImg");
 var bgImg = document.getElementById("bgImg");
 var dudeImg = document.getElementById("dudeImg");
-var terrainImg = document.getElementById("terrainImg");
-var x = 31*32;
-var y = 31*32;
-var mapSize=15*5;
+var tilesets = Array(2);
+tilesets[0]=document.getElementById("terrainImg");
+tilesets[1]=document.getElementById("christmasTerrainImg");
+
+/*TODO: the tiles should be in a list of asset files that would simplify
+//the process of adding new tilesheets*/
+
+var tilePos=Array(2);
+var x = 25*32;
+var y = 25*32;
+var mapSize=1000;
 var speed=4
 var canvasPressed=0;
 var keyPressed = 0;
@@ -23,8 +30,8 @@ var leftButton=0;
 var rightButton=0;
 var direction='down';
 var walking=false;
- var imap
- var jmap
+var imap
+var jmap
 const sxWalkAnimDown=[0,1,2,3,4,5,6,7,8,9];
 const syWalkAnimDown=[4,4,4,4,4,4,4,4,4,4];
 const sxWalkAnimRight=[0,1,2,3,4,5,6,7,8,9];
@@ -44,10 +51,9 @@ const sxIdleAnimLeft=sxIdleAnimDown;
 const syIdleAnimLeft=Array(66).fill(1);
 
 /*----MAP----*/
-var mapX=Array(75)
-var mapY=Array(75)
-//TODO: mettre ca dans un fichier externe
-
+var map=Array(mapSize)
+var map2=Array(mapSize)
+var collisionMap=Array(mapSize);
 loadMap()
 
 var animCtr=0;
